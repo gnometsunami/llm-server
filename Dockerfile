@@ -17,3 +17,4 @@ RUN groupadd --gid 10001 non-root \
     && useradd --uid 10001 --gid 10001 -m non-root
 
 USER non-root
+EXPOSE 8080

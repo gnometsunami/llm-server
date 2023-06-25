@@ -1,12 +1,11 @@
 services:
-  llama-server:
+  llm:
     build: .
-    command: /llama/server --port 9000 -ngl 1000 -m /models/7B/wizardLM-7B.ggmlv3.q4_1.bin
-    network_mode: host
-    ports:
-      - "9000:9000"
+    command: /llama/server --port 8080 --host 0.0.0.0 -ngl 10000 -m /models/7B/wizardlm-7b-v1.0-uncensored.ggmlv3.q4_1.bin
     volumes:
       - /mnt/data/ai/models:/models:ro
+    networks:
+      - ai
     deploy:
       resources:
         reservations:
@@ -14,3 +13,15 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+  personality:
+    build: personality
+    environment:
+      - PORT=9000
+    ports:
+      - 9000:9000
+    networks:
+      - ai
+
+networks:
+  ai:
+    driver: bridge
