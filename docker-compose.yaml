@@ -5,6 +5,7 @@ services:
       - MODEL=${MODEL}
       - GPU_LAYERS=${GPU_LAYERS}
       - CUDA_VERSION=${CUDA_VERSION}
+      - LLAMA_VERSION=${LLAMA_VERSION}
     command: /llama/start.sh
     volumes:
       - type: bind
