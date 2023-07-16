@@ -14,10 +14,11 @@ FROM nvidia/cuda:${CUDA_VERSION}-runtime-ubuntu22.04
 
 WORKDIR /llama
 COPY --from=build /source/build/bin .
-COPY --chmod=755 start.sh .
+COPY start.sh .
 
 RUN groupadd --gid 10001 non-root \
-    && useradd --uid 10001 --gid 10001 -m non-root
+    && useradd --uid 10001 --gid 10001 -m non-root \
+    && chmod 755 start.sh
 
 USER non-root
 EXPOSE 8080
