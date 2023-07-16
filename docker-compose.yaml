@@ -7,7 +7,7 @@ services:
     command: /llama/start.sh
     volumes:
       - type: bind
-        source: /mnt/data/ai/models # set "./models" to the path where you have models saved on your docker host
+        source: ./models # set "./models" to the path where you have models saved on your docker host
         target: /models
         read_only: true # mount this folder as read only inside the llm container. llama should not edit your models.
     networks:
