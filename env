@@ -1,0 +1,15 @@
+# Where are your models saved?
+MODEL_DIR=./models
+
+# What model do you want to use? (Relative to MODEL_DIR)
+MODEL=7B/wizardLM-7B.ggmlv3.q4_1.bin
+
+# How many layers should offload from cpu to gpu (10000 effectively offloads all layers)
+GPU_LAYERS=10000
+
+# What port should the API run on?
+PORT=9000
+
+# What version of cuda tools do you want to build & run with? (https://hub.docker.com/r/nvidia/cuda/tags)
+CUDA_VERSION=12.2.0
+#CUDA_VERSION=11.8.0

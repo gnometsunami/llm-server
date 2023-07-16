@@ -1,15 +1,16 @@
 services:
   llm:
-    build: .
+    build: llm
     environment:
-      - MODEL=7B/wizardlm-7b-v1.0-uncensored.ggmlv3.q4_1.bin
-      - LAYERS=10000
+      - MODEL=${MODEL}
+      - GPU_LAYERS=${GPU_LAYERS}
+      - CUDA_VERSION=${CUDA_VERSION}
     command: /llama/start.sh
     volumes:
       - type: bind
-        source: ./models # set "./models" to the path where you have models saved on your docker host
+        source: ${MODEL_DIR}
         target: /models
-        read_only: true # mount this folder as read only inside the llm container. llama should not edit your models.
+        read_only: true
     networks:
       - ai
     deploy:
@@ -24,7 +25,7 @@ services:
     environment:
       - PORT=9000
     ports:
-      - 9000:9000
+      - ${API_PORT}:9000
     networks:
       - ai
 
