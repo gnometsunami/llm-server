@@ -13,6 +13,7 @@ FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
 
 WORKDIR /llama
 COPY --from=build /source/build/bin .
+COPY --chmod=755 start.sh .
 
 RUN groupadd --gid 10001 non-root \
     && useradd --uid 10001 --gid 10001 -m non-root
