@@ -28,8 +28,8 @@ api = fastapi.FastAPI()
 api.model_prompt_template = Template("$personality\n\nUSER: $prompt \nASSISTANT:")
 
 api.personality = Personality(
-    name=int(os.getenv("PERSONALITY_NAME", "HAL")),
-    description="You are a AI assistant that provides factual and helpful answers to a human.",
+    name=str(os.getenv("PERSONALITY_NAME", "HAL")),
+    description=str(os.getenv("PERSONALITY_DESCRIPTION", "You are a AI assistant.")),
 )
 
 

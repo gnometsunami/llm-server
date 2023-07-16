@@ -6,6 +6,8 @@ services:
       - GPU_LAYERS=${GPU_LAYERS}
       - CUDA_VERSION=${CUDA_VERSION}
       - LLAMA_VERSION=${LLAMA_VERSION}
+      - PERSONALITY_NAME=${PERSONALITY_NAME}
+      - PERSONALITY_DESCRIPTION=${PERSONALITY_DESCRIPTION}
     command: /llama/start.sh
     volumes:
       - type: bind
