@@ -16,3 +16,6 @@ CUDA_VERSION=12.2.0
 
 # What version of llama.cpp do you want to build & run? Because llama is not semantically versioned, use the commit sha. (https://github.com/ggerganov/llama.cpp)
 LLAMA_VERSION=6e7cca404748dd4b1a3affd0d1296e37f4ac0a6f
+
+PERSONALITY_NAME=HAL
+PERSONALITY_DESCRIPTION="You are a AI assistant that provides factual and helpful answers to a human."
