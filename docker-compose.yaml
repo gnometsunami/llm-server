@@ -1,9 +1,9 @@
 services:
   llm:
     build: .
-    command: /llama/server --port 8080 --host 0.0.0.0 -ngl 10000 -m /models/7B/wizardlm-7b-v1.0-uncensored.ggmlv3.q4_1.bin
+    command: /llama/server --port 8080 --host 0.0.0.0 -ngl 10000 -m /models/7B/wizardlm-7b-v1.0-uncensored.ggmlv3.q4_1.bin # set "7B/wizardlm-7b-v1.0-uncensored.ggmlv3.q4_1.bin" to the model that you want to run
     volumes:
-      - /mnt/data/ai/models:/models:ro
+      - ./models:/models:ro # set "./models" to the path where you have models saved on your docker host
     networks:
       - ai
     deploy:
