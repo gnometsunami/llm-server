@@ -10,9 +10,12 @@ GPU_LAYERS=10000
 # What port should the API run on?
 PORT=9000
 
-# What version of cuda tools do you want to build & run with? (https://hub.docker.com/r/nvidia/cuda/tags)
-CUDA_VERSION=12.2.0
+# What version of cuda tools do you want to build & run with? (https://hub.docker.com/r/nvidia/cuda/tags) (https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+CUDA_VERSION=12.2.0 
+#CUDA_VERSION=12.1.1
+#CUDA_VERSION=12.0.1
 #CUDA_VERSION=11.8.0
+#CUDA_VERSION=11.7.1
 
 # What version of llama.cpp do you want to build & run? Because llama is not semantically versioned, use the commit sha. (https://github.com/ggerganov/llama.cpp)
 LLAMA_VERSION=6e7cca404748dd4b1a3affd0d1296e37f4ac0a6f
